@@ -8,7 +8,12 @@
  */
 function trimProperties(obj) {
     // ✨ implement
-    return { obj };
+    const trimObj = {...obj } //copy of the untrimmed obj
+    Object.keys(trimObj).map((key) => {
+        trimObj[key] = trimObj[key].trim()
+    })
+    return trimObj
+
 }
 
 /**
@@ -21,7 +26,9 @@ function trimProperties(obj) {
  */
 function trimPropertiesMutation(obj) {
     // ✨ implement
-    return { obj }
+    return Object.keys(obj).map((key) => {
+        obj[key] = obj[key].trim()
+    })
 }
 
 /**
@@ -51,7 +58,7 @@ class Counter {
      */
     constructor(initialNumber) {
         // ✨ initialize whatever properties are needed
-        this.count = initialNumber + 1
+        this.count = initialNumber
     }
 
     /**
@@ -69,7 +76,7 @@ class Counter {
     countDown() {
         // ✨ implement
         if (this.count !== 0) {
-            this.count - 1
+            return this.count - 1
         }
     }
 }
@@ -121,6 +128,7 @@ class Car {
         this.odometer = 0 // car initilizes with zero miles
         this.tank = tankSize // car initiazes full of gas
         this.mpg = mpg // ✨ initialize whatever other properties are needed
+        this.fuel = tankSize;
     }
 
     /**

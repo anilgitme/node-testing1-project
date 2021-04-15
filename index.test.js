@@ -27,7 +27,7 @@ describe('[Exercise 2] trimPropertiesMutation', () => {
     })
     it('[4] the object returned is the exact same one we passed in', () => {
         // ✨ test away
-        const input = { name: 'anil', school: 'lambda', class: 'testing' }
+        const input = { name: 'anil ', school: 'lambda ', class: 'testing ' }
         const actual = utils.trimProperties(input)
         expect(actual).toEqual(input)
     })
@@ -36,6 +36,10 @@ describe('[Exercise 2] trimPropertiesMutation', () => {
 describe('[Exercise 3] findLargestInteger', () => {
     it('[5] returns the largest number in an array of numbers', () => {
         // ✨ test away
+        const arr = [2, 1, 7, 3, 14, 7]
+        const expected = 14
+        const actual = utils.findLargestInteger(arr)
+        expect(actual).toEqual(expected)
     })
 })
 
@@ -46,9 +50,12 @@ describe('[Exercise 4] Counter', () => {
     })
     it('[6] the FIRST CALL of counter.countDown returns the initial count', () => {
         // ✨ test away
+        expect(counter.countDown()).toEqual(3);
     })
     it('[7] the SECOND CALL of counter.countDown returns the initial count minus one', () => {
         // ✨ test away
+        counter.countDown()
+        expect(counter).toEqual(2)
     })
     it('[8] the count eventually reaches zero but does not go below zero', () => {
         // ✨ test away
